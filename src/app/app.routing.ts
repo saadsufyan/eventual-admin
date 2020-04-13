@@ -9,11 +9,11 @@ export const AppRoutes: Routes = [
     path: '',
     redirectTo: 'category',
     pathMatch: 'full',
-    canActivate: [AuthGuardService]
+    // canActivate: [AuthGuardService]
   }, {
     path: '',
     component: AdminLayoutComponent,
-    canActivate: [AuthGuardService],
+    // canActivate: [AuthGuardService],
     children: [
         {
       path: '',
