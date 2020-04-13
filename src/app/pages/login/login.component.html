@@ -1,0 +1,18 @@
+<section id="content" class="mt-md-5">
+    <form [formGroup] = "loginForm" (ngSubmit)="onSubmit()">
+        <h1>Login Form</h1>
+        <div>
+            <input type="text" formControlName="username" placeholder="Username" required="" id="username" />
+        </div>
+        <div>
+            <input type="password" formControlName="password" placeholder="Password" required="" id="password" />
+        </div>
+        <div>
+            <input type="submit" [disabled]="!loginForm.valid" value="Log in" />
+            <!-- <a href="#">Lost your password?</a>
+            <a href="#">Register</a> -->
+        </div>
+    </form><!-- form -->
+    
+</section><!-- content -->
+<ngx-spinner></ngx-spinner>

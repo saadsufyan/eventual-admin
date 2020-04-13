@@ -1,0 +1,31 @@
+<div>
+    <button (click)="navigateAddCategory()" class="bnt btn-primary add-btn">Add</button>
+</div>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" id="table" class="row-border hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Image</th>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Arabic Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let x of items">
+        <td>{{ x.id }}</td>
+        <td><img [src]="x.image"></td>
+        <td>{{x.date}}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.name_arabic}}</td>
+        <td>
+          <!-- <div class="col-lg-12 col-12"> -->
+            <button class="btn btn-primary" (click)="onUpdate(x.id)">Update</button> 
+            <!-- <button class="update-delete" (click)="deleteMainCategory(person.id)">Delete</button> -->
+          <!-- </div> -->
+        </td>
+      </tr>
+    </tbody>
+    </table>
+    <ngx-spinner></ngx-spinner>

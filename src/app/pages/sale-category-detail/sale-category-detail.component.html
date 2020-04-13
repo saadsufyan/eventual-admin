@@ -1,0 +1,51 @@
+<h1> Add Product Sales Category </h1>
+<form [formGroup] = "saleCategory" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label class="btn btn-primary" for="exampleFormControlFile1">Choose File</label>
+    <input type="file" (change)="onFileChange($event)" class="form-control-file" id="exampleFormControlFile1">
+  </div>
+  <div class="form-group row">
+    <div class="col-md-6">
+      <label for="exampleInputEmail1">Main Category Name</label>
+      <input type="email"  formControlName="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Main Category Name">
+    </div>
+    <div class="col-md-6">
+          <label for="arabicName">Category Arabic Name</label>
+          <input type="email" formControlName="name_arabic" class="form-control" id="arabicName" aria-describedby="emailHelp" placeholder="">
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="col-md-6">
+      <label for="shortDescription">Short Description</label>
+      <input type="text"  formControlName="short_description" class="form-control" id="shortDescription" aria-describedby="emailHelp" placeholder="Short Description">
+    </div>
+    <div class="col-md-6">
+          <label for="shortDescriptionArabic">Short Description Arabic</label>
+          <input type="text"  formControlName="short_description_arabic" class="form-control" id="shortDescriptionArabic" aria-describedby="emailHelp" placeholder="">
+    </div>
+</div>
+<div class="form-group">
+    <label for="category">Select Main Category</label>
+    <select class="form-control" formControlName="main_category_id" id="CategoryId">
+      <option *ngFor="let mainCategory of mainCategoryList" value={{mainCategory.id}}>{{mainCategory.name}}</option>
+    </select>
+</div>
+<div class="form-group row">
+    <div class="col-md-6">
+      <label for="description">Description</label>
+      <textarea class="form-control"  formControlName="description" id="description" rows="3"></textarea>
+    </div>
+    <div class="col-md-6">
+        <label for="descriptionArabic">Arabic Description</label>
+        <textarea class="form-control"  formControlName="description_arabic" id="descriptionArabic" rows="3"></textarea>
+    </div>
+</div>
+  <div class="form-group row">
+    <div class="col-md-12">
+        <label for="date">Select Date</label>
+        <ns:ng-datepicker  formControlName="date" options id="date" />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<ngx-spinner></ngx-spinner>
